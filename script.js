@@ -1,8 +1,8 @@
 //your code here
 
-
+const ul=document.getElementById("brand");
 let touristSpots = [
-  ...document.getElementById("brand").getElementsByTagName("li"),
+  ...ul.getElementsByTagName("li"),
 ].map((list) => list.innerText);
 function dynamicSort(a, b) {
   const regex = new RegExp("(^(an|An|a|A|the|The))", "i");
