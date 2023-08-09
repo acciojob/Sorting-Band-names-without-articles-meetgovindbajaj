@@ -1,5 +1,9 @@
 //your code here
 
+
+let touristSpots = [
+  ...document.getElementById("brand").getElementsByTagName("li"),
+].map((list) => list.innerText);
 function dynamicSort(a, b) {
   const regex = new RegExp("(^(an|An|a|A|the|The))", "i");
   let one = regex.test(a) ? a.split(regex) : [a],
@@ -8,5 +12,10 @@ function dynamicSort(a, b) {
   two = two[two.length - 1].trim().toUpperCase();
   return one < two ? -1 : one > two ? 1 : 0;
 }
-let touristSpots = ["The Virupaksha Temple", "Victoria Memorial", "Tajmahal"];
 touristSpots.sort(dynamicSort);
+ul.innerHTML = touristSpots
+  .map((list) => {
+    return `<li>${list}</li>`;
+  })
+  .toString()
+  .replaceAll(",", "");
