@@ -1,6 +1,6 @@
 //your code here
 
-const ul=document.getElementById("brand");
+const ul=document.getElementById("band");
 let touristSpots = [
   ...ul.getElementsByTagName("li"),
 ].map((list) => list.innerText);
